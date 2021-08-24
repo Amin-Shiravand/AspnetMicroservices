@@ -1,9 +1,5 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Catalog.API.Entities
 {
@@ -14,7 +10,7 @@ namespace Catalog.API.Entities
 		public string Id { set; get; }
 
 		[BsonElement("Name")]
-		public string Name { get; set; }
+		public string Name { get; set; } 
 
 		public string Category { get; set; }
 
@@ -25,6 +21,5 @@ namespace Catalog.API.Entities
 		public string ImageFile { get; set; }
 		
 		public decimal Price { get; set; }
-
 	}
 }
