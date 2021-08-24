@@ -29,7 +29,6 @@ namespace Catalog.API.Repositories
 		public async Task<IEnumerable<Product>> GetProductByName(string Name)
 		{
 			FilterDefinition<Product> filter = Builders<Product>.Filter.Eq(product => product.Name, Name);
-
 			return await this.context.Products.Find(filter).ToListAsync();
 		}
 
@@ -47,17 +46,15 @@ namespace Catalog.API.Repositories
 		public async Task<bool> UpdateProduct(Product Product)
 		{
 			FilterDefinition<Product> filter = Builders<Product>.Filter.Eq(product => product.Id, Product.Id);
-			var updateResult = await this.context.Products.ReplaceOneAsync(filter, replacement: Product);
+			ReplaceOneResult updateResult = await this.context.Products.ReplaceOneAsync(filter, replacement: Product);
 			return updateResult.IsAcknowledged && updateResult.ModifiedCount > 0;
 		}
 
 		public async Task<bool> DeleteProduct(string Id)
 		{
 			FilterDefinition<Product> filter = Builders<Product>.Filter.Eq(product => product.Id, Id);
-
-			var updateResult = await this.context.Products.DeleteOneAsync(filter);
-
-			return updateResult.IsAcknowledged && updateResult.DeletedCount > 0;
+			DeleteResult deleteResult = await this.context.Products.DeleteOneAsync(filter);
+			return deleteResult.IsAcknowledged && deleteResult.DeletedCount > 0;
 		}
 	}
 }
