@@ -1,4 +1,4 @@
-﻿using Catalog.API.Entities;
+using Catalog.API.Entities;
 using Catalog.API.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -72,7 +72,7 @@ namespace Catalog.API.Controllers
 			return Ok(await repository.UpdateProduct(Product));
 		}
 
-		[HttpDelete("{Id:length(24)",Name = "DeleteProduct")]
+		[HttpDelete("{Id:length(24)}",Name = "DeleteProduct")]
 		[ProducesResponseType(typeof(Product),StatusCodes.Status200OK)]
 		public async Task<IActionResult> DeleteProductById(string Id)
 		{
