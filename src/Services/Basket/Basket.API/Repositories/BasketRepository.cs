@@ -29,7 +29,7 @@ namespace Basket.API.Repositories
 		{
 			await redisCache.SetStringAsync(Basket.UserName, JsonConvert.SerializeObject(Basket));
 
-			return await  (Basket.UserName);
+			return await GetBasket(Basket.UserName);
 		}
 
 		public async Task DeleteBasket(string UserName)
