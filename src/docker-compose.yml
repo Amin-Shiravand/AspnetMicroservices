@@ -3,7 +3,7 @@ version: '3.4'
 services:
   catalogdb:
     image: mongo
-
+    
   basketdb:
     image: redis:alpine 
    
@@ -36,4 +36,3 @@ volumes:
   postgres_data:
   pgadmin_data:
   mongoclient_data:
- 
