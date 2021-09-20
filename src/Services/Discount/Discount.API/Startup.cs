@@ -33,6 +33,7 @@ namespace Discount.API
 			{
 				c.SwaggerDoc("v1", new OpenApiInfo { Title = "Discount.API", Version = "v1" });
 			});
+
 			services.AddScoped<IDiscountContext, DiscountContext>();
 			services.AddScoped<IDsicountRepository, DiscountRepository>();
 		}
