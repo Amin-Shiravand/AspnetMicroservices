@@ -26,6 +26,7 @@
       },
       "dotnetRunMessages": "true",
       "applicationUrl": "http://localhost:5002"
+
     },
     "Docker": {
       "commandName": "Docker",
