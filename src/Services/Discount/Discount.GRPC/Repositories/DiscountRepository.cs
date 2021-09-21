@@ -1,10 +1,10 @@
-﻿using Discount.API.Data;
-using Discount.API.Entities;
+﻿using Discount.GRPC.Data;
+using Discount.GRPC.Entities;
 using Dapper;
 using System.Threading.Tasks;
 
 
-namespace Discount.API.Repositories
+namespace Discount.GRPC.Repositories
 {
 	public class DiscountRepository : IDiscountRepository
 	{

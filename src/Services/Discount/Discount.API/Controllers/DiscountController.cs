@@ -14,10 +14,10 @@ namespace Discount.API.Controllers
 	[Route("api/v1/[controller]")]
 	public class DiscountController : ControllerBase
 	{
-		private readonly IDsicountRepository repository;
+		private readonly IDiscountRepository repository;
 		private readonly ILogger<DiscountController> logger;
 
-		public DiscountController(IDsicountRepository repository, ILogger<DiscountController> logger)
+		public DiscountController(IDiscountRepository repository, ILogger<DiscountController> logger)
 		{
 			this.repository = repository;
 			this.logger = logger;
