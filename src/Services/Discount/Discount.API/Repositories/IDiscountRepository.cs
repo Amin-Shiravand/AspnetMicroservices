@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Discount.API.Repositories
 {
-	public interface IDsicountRepository
+	public interface IDiscountRepository
 	{
 		Task<Coupon> GetDiscount(string ProdcutName);
 		Task<bool> CreateDiscount(Coupon Coupon);
