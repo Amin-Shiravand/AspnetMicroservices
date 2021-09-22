@@ -11,10 +11,10 @@ namespace Discount.GRPC.Services
 	public class DiscountService : DiscountProtoService.DiscountProtoServiceBase
 	{
 		private readonly IDiscountRepository repository;
-		private readonly ILogger logger;
+		private readonly ILogger<DiscountService> logger;
 		private readonly IMapper mapper;
 
-		public DiscountService(IDiscountRepository repository, ILogger logger, IMapper mapper)
+		public DiscountService(IDiscountRepository repository, ILogger<DiscountService> logger, IMapper mapper)
 		{
 			this.repository = repository;
 			this.logger = logger;
