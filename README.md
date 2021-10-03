@@ -15,5 +15,3 @@ There is a couple of microservices which implemented  modules based on [Jason Ta
 * [SendGrid](https://github.com/sendgrid/sendgrid-csharp)
 * [Docker](https://www.docker.com/)
 
-
-
