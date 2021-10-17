@@ -8,7 +8,7 @@ namespace Ordering.Infrastructure.Persistence
 {
 	public class OrderContextSeed
 	{
-		public static async Task SeedAsync(OrderContext OrderContex, ILogger<OrderContext> Logger)
+		public static async Task SeedAsync(OrderContext OrderContex, ILogger<OrderContextSeed> Logger)
 		{
 			if (!OrderContex.Orders.Any())
 			{
@@ -18,12 +18,12 @@ namespace Ordering.Infrastructure.Persistence
 			}
 		}
 
-		private static IEnumerable<Order> GetPreconfiguredOrders()
+		private static IEnumerable<Order> GetPreconfiguredOrders() 
 		{
 			return new List<Order>
 			{
 				new Order{
-				UserName = "ASH",
+				UserName = "ASH", 
 				FirstName = "AMIN",
 				LastName = "SHIRAVAND",
 				EmailAddress = "aminshiravand92@gmail.com",
