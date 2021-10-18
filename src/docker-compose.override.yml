@@ -49,14 +49,13 @@ services:
     volumes:
        - mssql_data:/var/opt/mssql
        - mssql_user:/var/opt/sqlserver
-  
+
   rabbitmq:
     container_name: rabbitmq
     restart: always
     ports:
         - "5672:5672"
         - "15672:15672"
-
 
   pgadmin:
     container_name: pgadmin

@@ -26,7 +26,6 @@ namespace Ordering.API
 		{
 			services.AddApplicationServices();
 			services.AddInfrastructureServices(Configuration);
-
 			services.AddMassTransit((config) =>
 			{
 				config.AddConsumer<BasketCheckoutConsumer>();
@@ -39,7 +38,6 @@ namespace Ordering.API
 					 });
 				});
 			});
-
 			
 			services.AddAutoMapper(typeof(Startup));
 			services.AddScoped<BasketCheckoutConsumer>();
