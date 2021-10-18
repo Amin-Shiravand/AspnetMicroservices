@@ -9,9 +9,12 @@ services:
    
   discountdb:
     image: postgres
-
+     
   orderdb:
     image: mcr.microsoft.com/mssql/server:2017-latest
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
 
   mongoclient:
     image: mongoclient/mongoclient

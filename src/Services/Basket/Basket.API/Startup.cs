@@ -2,6 +2,7 @@ using System;
 using Basket.API.GrpcServices;
 using Basket.API.Repositories;
 using Discount.GRPC.Protos;
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,16 +24,34 @@ namespace Basket.API
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+
+			// Redis Configuration
 			services.AddStackExchangeRedisCache(Options =>
 			{
 				Options.Configuration = Configuration.GetValue<string>("CacheSettings:ConnectionString");
 			});
 
+			//Grpc Configuration
 			services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(option =>
 			{
 				string conenction = Configuration["GrpcSettings:DiscountUrl"];
 				option.Address = new Uri(conenction);
 			});
+
+
+			//MassTransit-RabbitMQ Configuration
+			services.AddMassTransit(config => 
+			{
+				config.UsingRabbitMq((ctx, config0) =>
+				{
+					config0.Host(Configuration["EventBusSettings:HostAddress"]);
+				
+				});
+				
+			});
+
+			services.AddMassTransitHostedService();
+			services.AddAutoMapper(typeof(Startup));
 
 			services.AddScoped<DiscountGrpcService>();
 			services.AddScoped<IBasketRepository, BasketRepository>();
