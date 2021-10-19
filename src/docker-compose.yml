@@ -15,6 +15,9 @@ services:
 
   rabbitmq:
     image: rabbitmq:3-management-alpine
+    
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
 
   mongoclient:
     image: mongoclient/mongoclient
