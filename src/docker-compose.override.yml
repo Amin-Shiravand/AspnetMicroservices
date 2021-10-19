@@ -136,3 +136,15 @@ services:
     ports:
       - "8004:80"
 
+
+  ocelotapigw:
+     container_name: ocelotapigw
+     depends_on:
+        - catalog.api
+        - basket.api
+        - discount.api
+        - ordering.api
+     environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+     ports:
+            - "8010:80"
