@@ -3,7 +3,7 @@
 There is a couple of microservices which implemented  modules based on [Jason Taylor's](https://github.com/jasontaylordev/CleanArchitecture) template
 
 ## Technologies
-
+Use of EFCore features such as FluentAPI, Filtered, RawSQL, Eager and Explicit loading
 * ASP.NET Core 5
 * [Entity Framework Core 5](https://docs.microsoft.com/en-us/ef/core/)
 * [MediatR](https://github.com/jbogard/MediatR)
