@@ -1,5 +1,5 @@
 # Dot net core microservices template
-Based on Udemy Tutorial 
+Based on Udemy tutorial
 There is a couple of microservices which implemented  modules based on [Jason Taylor's](https://github.com/jasontaylordev/CleanArchitecture) template
 
 ## Technologies
