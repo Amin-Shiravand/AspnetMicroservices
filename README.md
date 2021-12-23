@@ -1,7 +1,7 @@
 # Dot net core microservices template
-Based on Udemy tutorial
-There is a couple of microservices which implemented  modules based on [Jason Taylor's](https://github.com/jasontaylordev/CleanArchitecture) template
 
+There is a couple of microservices which implemented  modules based on [Jason Taylor's](https://github.com/jasontaylordev/CleanArchitecture) template
+Based on udemy tutorial for personal study 
 ## Technologies
 Use of EFCore features such as FluentAPI, Filtered, RawSQL, Eager and Explicit loading
 * ASP.NET Core 5
